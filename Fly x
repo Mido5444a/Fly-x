@@ -1,4 +1,3 @@
-_G.FLYING = false
 local LP = game:service('Players').LocalPlayer
 local T = LP.Character.UpperTorso
 local CONTROL = {F = 0, B = 0, L = 0, R = 0}
@@ -8,7 +7,6 @@ local MOUSE = LP:GetMouse()
 
 
 local function FLY()
-    _G.FLYING = true --make it false = no fly
     local BG = Instance.new('BodyGyro', T)
     local BV = Instance.new('BodyVelocity', T)
     BG.P = 9e4
@@ -35,7 +33,6 @@ local function FLY()
           BV.velocity = Vector3.new(0, 0.1, 0)
         end
         BG.cframe = game.Workspace.CurrentCamera.CoordinateFrame
-      until not _G.FLYING
       CONTROL = {F = 0, B = 0, L = 0, R = 0}
       lCONTROL = {F = 0, B = 0, L = 0, R = 0}
       SPEED = 0
